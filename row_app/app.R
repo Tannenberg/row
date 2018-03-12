@@ -17,7 +17,8 @@ ui <- fluidPage(
   
   p("This is an app that displays regime types across the world from 1900 to today. 
     The measure is based on a categorization developed by", 
-    a("Lührmann, Tannenberg, and Lindberg (2018)", href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2971869"), 
+    a("Lührmann, Tannenberg, and Lindberg (2018)", 
+      href = "https://www.v-dem.net/files/5/Regimes%20of%20the%20World%20-%20Final.pdf"), 
     "that", br(), "utilizes",
     a("V-Dem's", href = "https://www.v-dem.net"), 
     "excellent data to code any given country and year as either a",
@@ -92,7 +93,7 @@ server <- function(input, output) {
       paste('row-', Sys.Date(), '.csv', sep='')
     },
     content = function(con) {
-      write.csv(row_v1_1, con)
+      write.csv(row_v71, con)
     }
   )
   
