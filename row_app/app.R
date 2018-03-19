@@ -18,15 +18,18 @@ ui <- fluidPage(
   p("This is an app that displays regime types across the world from 1900 to today. 
     The measure is based on a categorization developed by", 
     a("Lührmann, Tannenberg, and Lindberg (2018)", 
-      href = "https://www.v-dem.net/files/5/Regimes%20of%20the%20World%20-%20Final.pdf"), 
-    "that", br(), "utilizes",
+      href = "https://www.cogitatiopress.com/politicsandgovernance/article/view/1214"), 
+    "that utilizes",
     a("V-Dem's", href = "https://www.v-dem.net"), 
     "excellent data to code any given country and year as either a",
     tags$strong(tags$span(style="color:#e66101", "Closed Autocracy")), ",", 
     tags$strong(tags$span(style="color:#fdb863", "Electoral Autocracy")), ",", 
     tags$strong(tags$span(style="color:#b2abd2", "Electoral Democracy")), "or a",
-    tags$strong(tags$span(style="color:#5e3c99", "Liberal Democracy")), ".", br(), 
-    "  ", tags$hr()
+    tags$strong(tags$span(style="color:#5e3c99", "Liberal Democracy")), ".", 
+    " ", "The article describing our coding schema, and comparing RoW to extant data sets is freely available from open access journal", 
+    a("Politics and Governance", 
+      href = "https://www.cogitatiopress.com/politicsandgovernance/index"), 
+     ".", tags$hr()
   ), 
   
   
@@ -52,7 +55,7 @@ ui <- fluidPage(
       
       helpText("Data from: Lührmann, A, Tannenberg, M., Lindberg, S. I., (2018). 
                Regimes of the World (RoW): Opening New Avenues for the Comparative Study
-               of Political Regimes. Politics and Governance, (forthcomming)"), 
+               of Political Regimes. Politics and Governance, 6(1), p. 60–77"), 
       
       # Button
       downloadButton("downloadData", "Download Data - RoW")
