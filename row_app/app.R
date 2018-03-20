@@ -75,7 +75,7 @@ server <- function(input, output) {
   output$map <- renderPlot({
     
     
-    mapdata <- joinCountryData2Map(row_v71 %>% filter(year== input$year),
+    mapdata <- joinCountryData2Map(row %>% filter(year== input$year),
                                    joinCode = "ISO3", 
                                    nameJoinColumn = "country_text_id"
     )
@@ -96,7 +96,7 @@ server <- function(input, output) {
       paste('row-', Sys.Date(), '.csv', sep='')
     },
     content = function(con) {
-      write.csv(row_v71, con)
+      write.csv(row, con)
     }
   )
   
