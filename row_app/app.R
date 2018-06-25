@@ -5,9 +5,10 @@ library(shiny)
 library(rworldmap)
 library(tidyverse)
 library(readstata13)
+library(rio)
 
 my_col <-  c("#e66101", "#fdb863", "#b2abd2", "#5e3c99")
-load("./www/row.RData")
+row <- import("./www/row.csv")
 
 # Define UI for application that draws a map
 ui <- fluidPage(
@@ -27,9 +28,12 @@ ui <- fluidPage(
     tags$strong(tags$span(style="color:#b2abd2", "Electoral Democracy")), "or a",
     tags$strong(tags$span(style="color:#5e3c99", "Liberal Democracy")), ".", 
     " ", "The article describing our coding schema, and comparing RoW to extant data sets is freely available from open access journal", 
-    a("Politics and Governance", 
+    a("Politics and Governance,", 
       href = "https://www.cogitatiopress.com/politicsandgovernance/index"), 
-     ".", tags$hr()
+     "and is part of the special issue",
+    a("Why Choice Matters: Revisiting and Comparing Measures of Democracy", 
+      href = "https://www.cogitatiopress.com/politicsandgovernance/issue/view/82"), 
+    ".", tags$hr()
   ), 
   
   
@@ -39,7 +43,7 @@ ui <- fluidPage(
       sliderInput("animation", "Looping Animation:",
                   inputId = "year",
                   label = "Pick a year:",
-                  min = 1900, max = 2016,
+                  min = 1850, max = 2017,
                   value = 1990, step = 1,
                   animate = animationOptions(interval = 500, loop = FALSE),
                   sep = ""
