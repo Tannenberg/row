@@ -43,7 +43,7 @@ ui <- fluidPage(
       sliderInput("animation", "Looping Animation:",
                   inputId = "year",
                   label = "Pick a year:",
-                  min = 1850, max = 2017,
+                  min = 1900, max = 2017,
                   value = 1990, step = 1,
                   animate = animationOptions(interval = 500, loop = FALSE),
                   sep = ""
